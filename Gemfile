@@ -28,3 +28,4 @@ group :test do
 end
 
 gem 'twilio-ruby'
+gem 'yelp', require: 'yelp'
