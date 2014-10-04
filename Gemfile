@@ -26,3 +26,5 @@ group :test do
   # gem 'autotest-fsevent', '0.2.4'
   # gem 'autotest-growl', '0.2.9'
 end
+
+gem 'twilio-ruby'
