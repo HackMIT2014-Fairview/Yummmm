@@ -42,8 +42,7 @@ img {
 	<%= image_tag "hintedlogo.png" %>
 	
 	<%= form_for (@user) do |f| %>
-		<%= f.label :name %>
-		<%= f.text_field :name, :placeholder => 'Your Name' %>
+			<%= f.text_field :name, :placeholder => 'Your Name' %>
 	<br />
 		<%= f.text_field :number, :placeholder => '+1 (303 123 4567)' %>
 	<br />
