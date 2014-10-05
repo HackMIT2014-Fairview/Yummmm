@@ -13,6 +13,7 @@ SampleApp::Application.routes.draw do
   root :to => "register#home"
 
   match '/about',   :to => 'pages#about'
+  match '/submit', :to => "register#submit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

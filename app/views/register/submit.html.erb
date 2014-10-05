@@ -24,6 +24,13 @@ p {
 </style>
 </head>
 <body>
+	
+	<%=
+	
+	# create new user using post params
+	@user = User.new(params[:post])
+	
+	%>
 <div id="title"><img src="hintedlogo.png" style="margin:auto" width="85%" /></div>
 <p>You are now subscribed. Have fun studying!</p>
 </body>
