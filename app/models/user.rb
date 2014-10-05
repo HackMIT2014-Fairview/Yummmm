@@ -7,6 +7,7 @@
 #  phone              :string
 #  type               :string
 #  score              :integer
+#
 
 class User < ActiveRecord::Base
   attr_accessible :name, :phone, :type, :score 
