@@ -23,10 +23,10 @@ class User < ActiveRecord::Base
 #  validates :subject, :presence => true;
 #
   def increase_score
-      user.where(:phone, :subject).increment!(:score, 1)
+      user.where(:phone_number, :subject).increment!(:score, 1)
   end
 
   def increase_max_score
-      user.where(:phone, :subject).increment!(:max_score, 1)
+      user.where(:phone_number, :subject).increment!(:max_score, 1)
   end
 end
