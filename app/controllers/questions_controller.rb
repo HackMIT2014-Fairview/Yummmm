@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   
   def show
     @question = Question.find(params[:id])
-    @title = @question.name
+    @title = @question.prompt
   end
 
   def new
