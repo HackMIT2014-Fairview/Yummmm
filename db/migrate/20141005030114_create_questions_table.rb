@@ -1,10 +1,10 @@
 class CreateQuestionsTable < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
-      t.string :type
+      t.string :subject
       t.string :prompt
       t.string :answer
-      t.boolean :used
+      t.boolean :used, default: false
     end
   end
   def self.down
