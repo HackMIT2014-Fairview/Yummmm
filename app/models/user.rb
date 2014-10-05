@@ -18,11 +18,10 @@ class User < ActiveRecord::Base
 
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
-  validates :phone, :presence   => true,
-                    :format     => { :minimum => 9},
-                    :format     => { :maximum => 9}
-  validates :subject, :presence => true;
-
+# validates :phone_number, :presence   => true,
+#                  :format     => { :minimum => 9}
+#  validates :subject, :presence => true;
+#
   def increase_score
       user.where(:phone, :subject).increment!(:score, 1)
   end

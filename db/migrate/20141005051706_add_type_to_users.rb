@@ -1,9 +1,9 @@
-class AddTypeToUsers < ActiveRecord::Migration
+class AddSubjectToUsers < ActiveRecord::Migration
   def self.up
-    add_column :users, :type, :string
+    add_column :users, :subject, :string
   end
 
   def self.down
-    remove_column :users, :type, :string
+    remove_column :users, :subject, :string
   end
 end
