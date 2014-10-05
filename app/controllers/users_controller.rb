@@ -12,8 +12,11 @@ class UsersController < ApplicationController
   end
   
   def show
+    @questions = Question.all
     @user = User.find(params[:id])
     @title = @user.name
+    MessageJob.perform_async(@user, @questions)
+    @questions.first.used = true
   end
 
   def new
@@ -22,9 +25,11 @@ class UsersController < ApplicationController
   end
   
   def create
+    @questions = Question.all
     @user = User.new(params[:user])
     if @user.save
-      # MessageJob.perform_async()
+      MessageJob.perform_async(@user, @questions)
+      @questions.first.used = true
       redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }
     else
       @title = "Sign up"

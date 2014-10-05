@@ -9,7 +9,7 @@ class MessageJob
     
   #A. B.'s keys
   #check if we should send a message or not 
-  def perform()
+  def perform(user, questions)
     random_bool = [true].sample   
     if random_bool
 	    account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
@@ -21,9 +21,9 @@ class MessageJob
       
       subjects = ["History", "SAT Prep", "Math"]
       subjects.each do |type|
-        array_size = @questions[:subject=>type,:used=>false].count
-        text = @questions.first.prompt
-        users = @users[:subject=>type]
+        array_size = questions[:subject=>type,:used=>false].count
+        text = questions[:subject=>type,:used=>false].first.prompt
+        users = users[:subject=>type]
         users.each do |user|
       	  @client.account.messages.create(
       	    :from => sender,
@@ -31,7 +31,7 @@ class MessageJob
       	    :body => text
       	    )
           end
-        @questions.first.used = true
+        
       end
     end
   end
