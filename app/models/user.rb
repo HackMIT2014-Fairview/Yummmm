@@ -18,7 +18,14 @@ class User < ActiveRecord::Base
 
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
- validates :phone_number, :presence   => true,
+  validates :phone_number, :presence   => true,
                   :length     => { :minimum => 9}
   validates :subject, :presence => true;
+  
+  after_initialize :init
+  
+  def init
+    self.score ||= 0
+    self.max_score ||= 0
+  end
 end

@@ -1,9 +1,9 @@
 	<%= form_for (@user) do |f| %>
 			<%= f.text_field :name, :placeholder => 'Your Name' %>
 	<br />
-		<%= f.text_field :phone_number, :placeholder => '+1 (303 123 4567)' %>
+		<%= f.text_field :phone_number, :placeholder => '+1 (303) 123 4567' %>
 	<br />
-		<%= f.select :subject, options_for_select([1,2,3,4]) %>
+		<%= f.select :subject, options_for_select(["History","SAT Prep", "Math"]) %>
 	<br />
 		<%= f.submit "Submit", :disable_with => 'Submitting...' %>
 	<% end %>
