@@ -7,4 +7,7 @@ class Question < ActiveRecord::Base
 
     validates :answer,  :presence => true
 
+    def init
+      self.used ||= false
+    end
 end
