@@ -34,6 +34,11 @@ class UsersController < ApplicationController
     @title = "Edit user"
   end
   
+  def leaders
+    @title = "Hmmm"
+    @users = User.all
+  end
+  
   def update
     if @user.update_attributes(params[:user])
       redirect_to @user, :flash => { :success => "Profile updated." }

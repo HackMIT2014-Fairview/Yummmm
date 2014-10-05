@@ -34,12 +34,29 @@ img {
 	margin:auto;
 	width: 85%;
 }
+footer {
+	font-size: 12px;
+	text-align: center;
+}
+a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+ol {
+	margin-left: 30px;
+	font-size: 22px;
+}
 </style>
 </head>
 <body>
 	<div id="title">
-		<%= image_tag "hintedlogo.png" %>
+		<a href="/"><%= image_tag "hintedlogo.png" %></a>
 	</div>
 <%= yield %>
+<footer>
+	<a href="/about">About us</a> | 
+	<a href="/leaders">Leaderboards</a>
+</footer>
 </body>
 </html>

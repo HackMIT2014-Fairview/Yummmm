@@ -13,7 +13,8 @@ SampleApp::Application.routes.draw do
   root :to => "users#new"
 
   match '/about',   :to => 'pages#about'
-
+  match '/leaders',   :to => 'users#leaders'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
