@@ -51,8 +51,6 @@ ActiveRecord::Schema.define(:version => 20141005051706) do
     t.string   "subject"
     t.integer  "score"
     t.integer  "max_score"
-    t.string   "number"
-    t.string   "type"
   end
 
 end
