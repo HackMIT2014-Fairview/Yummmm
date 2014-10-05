@@ -14,8 +14,11 @@ SampleApp::Application.routes.draw do
 
   match '/about',   :to => 'pages#about'
   match '/leaders',   :to => 'users#leaders'
+
   #match '/questions', :to => 'questions#new'
-  
+
+  match '/sms',   :to => 'answers#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
