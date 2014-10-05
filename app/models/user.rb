@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
   validates :phone_number, :presence   => true,
-                  :length     => { :in => 8..50}
+                  :length   => { :in => 8..50}
   validates :subject, :presence => true;
   
   after_initialize :init
