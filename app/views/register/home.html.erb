@@ -40,14 +40,27 @@ img {
 <body>
 <div id="title">
 	<%= image_tag "hintedlogo.png" %>
-<form action="submit">
-<input type="text" value="Your Name" name="name" id="name" style = 'color: gray' onblur="if (this.value == '') { this.value = 'Your Name'; this.style.color='gray'; };" onfocus="if (this.value == 'Your Name') { this.value = ''; } this.style.color='black';" /><br />
-<input type="text" value="+1 (303) 123 4567" name="number" id="number" style = 'color: gray' onblur="if (this.value == '') { this.value = '+1 (303) 123 4567'; this.style.color='gray'; };" onfocus="if (this.value == '+1 (303) 123 4567') { this.value = ''; } this.style.color='black';" /><br />
+	
+	<%= form_for (@user) do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name, :placeholder => 'Your Name' %>
+	<br />
+		<%= f.text_field :value, :placeholder => '+1 (303 123 4567)' %>
+	<br />
+		<%= f.select :type, options_for_select([1..4]) %>
+	<br />
+		<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+	<% end %>
+<!-- ><form action="submit">
+<input type="text" value="Your Name" name="name" id="name" style = 'color: gray' onblur="if (this.value == '') { this.value = 'Your Name'; this.style.color='gray'; };" onfocus="if (this.value == 'Your Name') { this.value = ''; } this.style.color='black';" />
+<br />
+<input type="text" value="+1 (303) 123 4567" name="number" id="number" style = 'color: gray' onblur="if (this.value == '') { this.value = '+1 (303) 123 4567'; this.style.color='gray'; };" onfocus="if (this.value == '+1 (303) 123 4567') { this.value = ''; } this.style.color='black';" />
+<br />
 <select style="size: 26px" name="type" onfocus="this.style.color='black'">
 <option value="SAT">SAT Prep</option>
 <option value="MCAT">MCAT Prep</option>
 <option value="history">US History</option>
 </select><br />
-<input type="submit" value="submit!"/>
+<input type="submit" value="submit!"/></form> -->
 </body>
 </html>

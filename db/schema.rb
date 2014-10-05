@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141005030204) do
+ActiveRecord::Schema.define(:version => 20141005051706) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20141005030204) do
     t.string   "subject"
     t.integer  "score"
     t.integer  "max_score"
+    t.string   "number"
+    t.string   "type"
   end
 
 end

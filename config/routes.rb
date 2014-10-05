@@ -10,10 +10,9 @@ SampleApp::Application.routes.draw do
   resources :microposts,    :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
   
-  root :to => "register#home"
+  root :to => "users#new"
 
   match '/about',   :to => 'pages#about'
-  match '/submit', :to => "register#submit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
