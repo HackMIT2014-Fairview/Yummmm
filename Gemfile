@@ -29,3 +29,5 @@ end
 
 gem 'twilio-ruby'
 gem 'oauth', '~> 0.4.7'
+gem 'sidekiq'
+gem 'redis'
