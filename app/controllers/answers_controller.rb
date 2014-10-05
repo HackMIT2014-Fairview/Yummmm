@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
     # for @users.each do |user|
       # user.max_score += 100
     # end
-    @completer = User.which(:subject => @lastQuestion.subject, :phone_number => from_number).first
+    @completer = User.where(:subject => @lastQuestion.subject, :phone_number => from_number).first
     if @answer.response == @lastQuestion.answer
        @completer.score += points
        account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
