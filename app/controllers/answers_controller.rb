@@ -16,10 +16,37 @@ class AnswersController < ApplicationController
     start =  @lastQuestion.updated_at
     finish =  @answer.created_at
     points = 100 - (finish - start)
-    for @users.each do |user|
-      user.max_score += 100
+    # for @users.each do |user|
+      # user.max_score += 100
+    # end
+    @completer = User.which(:subject => @lastQuestion.subject, :phone_number => from_number)
+    if @answer.response == @lastQuestion.answer
+       @completer.score += points
+       account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
+       auth_token = '8cc5c6bfc1b4659c35946fc12c5986ae'
+
+       @client = Twilio::REST::Client.new account_sid, auth_token
+
+       sender = '+1 720-459-5475'
+       @client.account.messages.create(
+            :from => sender,
+            :to => from_number,
+            :body => "Congrats, way to know your stuff!"
+            )
     end
-    @completer = User.which(:subject => @lastQuestion.subject, :phone_number => @answer.from)
-    @completer.score += points 
+    else
+        account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
+        auth_token = '8cc5c6bfc1b4659c35946fc12c5986ae'
+
+        @client = Twilio::REST::Client.new account_sid, auth_token
+
+        sender = '+1 720-459-5475'
+        @client.account.messages.create(
+              :from => sender,
+              :to => from_number,
+              :body => "Too Bad, maybe you should study more"
+              )
+
+    end
   end
 end
