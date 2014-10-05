@@ -1,5 +1,5 @@
  <ol>
-	    <% @users.each do |user| %>
+	    <% @users.sort_by{|m| -m[:score]}.each do |user| %>
 	    	<li><%= user.name %> - <%= user.score %></li>
 	    <% end %>
 </ol>
