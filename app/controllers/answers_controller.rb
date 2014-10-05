@@ -31,10 +31,10 @@ class AnswersController < ApplicationController
        @client.account.messages.create(
             :from => sender,
             :to => from_number,
-            :body => "Congrats, way to know your stuff!"
+            :body => "Congrats, way to know your stuff! You have " + @completer.score + " points"
             )
-    end
     else
+        @completer.score -= points
         account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
         auth_token = '8cc5c6bfc1b4659c35946fc12c5986ae'
 
@@ -44,7 +44,7 @@ class AnswersController < ApplicationController
         @client.account.messages.create(
               :from => sender,
               :to => from_number,
-              :body => "Too Bad, maybe you should study more"
+              :body => "Too Bad, maybe you should study more. You have " + @completer.score + "points"
               )
 
     end
