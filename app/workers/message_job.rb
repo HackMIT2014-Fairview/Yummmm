@@ -7,7 +7,7 @@ class MessageJob
   require 'twilio-ruby'
 # require 'sinatra'
     
-    #A. B.'s keys
+  #A. B.'s keys
   #check if we should send a message or not 
   def perform()
     random_bool = [true].sample   
@@ -18,27 +18,20 @@ class MessageJob
 	@client = Twilio::REST::Client.new account_sid, auth_token
 
 	sender = '+1 720-459-5475'
-	friends = {
-	  '+1 720 341 7509' => 'Katie',   
-	  '+13038070600' => 'Larry',
-	  '+13035799305' => 'Jaimie',
-	  '+17203261705' => 'Rose'
-	}
-	text = 'what is the answer? [a, b, c, d]' #question goes here
 
-	for number in friends.keys
-	  @client.account.messages.create(
-	    :from => sender,
-	    :to => number,
-	    :body => text
-	    )
-	end    
-    
+  subjects = ["History", "SAT Prep", "Math"]
+  subjects.each do |type|
+    array_size = @questions[:subject=>type,:used=>false].count
+    text = @questions.first.prompt
+    users = @users[:subject=>type]
+    users.each do |user|
+  	  @client.account.messages.create(
+  	    :from => sender,
+  	    :to => user.phone_number,
+  	    :body => text
+  	    )
     end
-    
+    @questions.first.used = true
   end
-
-
-
 end
 
