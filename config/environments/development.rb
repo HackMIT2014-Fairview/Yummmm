@@ -19,4 +19,6 @@ SampleApp::Application.configure do
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
+  #ENV["REDISTOGO_URL"] = 'redis://logangarbarini@gmail.com:Lm78gNE8@hint-ed.herokuapp.com:6389'
+
 end
