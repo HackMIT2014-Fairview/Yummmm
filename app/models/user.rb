@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
   after_initialize :init
   
   def init
+    number = self.phone_number
+    self.phone_number ||= ""
+    self.phone_number = (self.phone_number+"a").gsub(/\D/, '')
     self.score ||= 0
     self.max_score ||= 0
   end
