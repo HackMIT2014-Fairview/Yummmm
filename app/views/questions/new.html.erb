@@ -1,0 +1,9 @@
+	<%= form_for (@question) do |f| %>
+		<%= f.text_field :subject, :placeholder => 'Subject' %>
+	<br />	
+		<%= f.text_field :prompt, :placeholder => 'The prompt' %>
+	<br />
+		<%= f.text_field :answer, :placeholder => 'The answer' %>
+	<br />
+		<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+	<% end %>

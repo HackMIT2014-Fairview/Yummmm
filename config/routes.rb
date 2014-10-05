@@ -8,12 +8,13 @@ SampleApp::Application.routes.draw do
   
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :microposts,    :only => [:create, :destroy]
-  resources :relationships, :only => [:create, :destroy]
+  resources :questions
   
   root :to => "users#new"
 
   match '/about',   :to => 'pages#about'
   match '/leaders',   :to => 'users#leaders'
+  #match '/questions', :to => 'questions#new'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
