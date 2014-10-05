@@ -28,4 +28,4 @@ group :test do
 end
 
 gem 'twilio-ruby'
-gem 'yelp', require: 'yelp'
+gem 'oauth', '~> 0.4.7'
