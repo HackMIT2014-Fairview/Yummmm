@@ -31,10 +31,15 @@ input[type="submit"] {
 	background-color: #8a2d3c;
 	color:white;
 }
+img {
+	margin:auto;
+	width: 85%;
+}
 </style>
 </head>
 <body>
-<div id="title"><img src="hintedlogo.png" style="margin:auto" width="85%" /></div>
+<div id="title">
+	<%= image_tag "hintedlogo.png" %>
 <form action="post">
 <input type="text" value="Your Name" name="name" id="name" style = 'color: gray' onblur="if (this.value == '') { this.value = 'Your Name'; this.style.color='gray'; };" onfocus="if (this.value == 'Your Name') { this.value = ''; } this.style.color='black';" /><br />
 <input type="text" value="+1 (303) 123 4567" name="number" id="number" style = 'color: gray' onblur="if (this.value == '') { this.value = '+1 (303) 123 4567'; this.style.color='gray'; };" onfocus="if (this.value == '+1 (303) 123 4567') { this.value = ''; } this.style.color='black';" /><br />
