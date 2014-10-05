@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :phone, :type, :score 
+  attr_accessible :name, :phone, :subject, :score, :max_score
   phone_regex = ^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$ 
   
   validates :name,  :presence => true,
