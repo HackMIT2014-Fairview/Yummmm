@@ -8,7 +8,7 @@ Scores are decided by having the correct answer and how much time elapsed from t
 If the user responds with a wrong answer 5 points are deducted
 A leaderboard of the fastest and most correct users is maintained online
 ## Technologies
-Rails Stack - (Postgres DB)
+Rails Stack - (Postgres DB),
 Twilio API - SMS handling
 ## Challenges
 We ran into a weird error with comparing the submitted answer and correct answer string.
