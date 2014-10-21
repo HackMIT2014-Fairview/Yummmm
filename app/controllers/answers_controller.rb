@@ -26,8 +26,10 @@ class AnswersController < ApplicationController
     # for @users.each do |user|
       # user.max_score += 100
     # end
+    response = @answer.response
+    answer =  @lastQuestion.response
     @completer = User.where(:subject => @lastQuestion.subject, :phone_number => from_number).first
-    if @answer.response == @lastQuestion.answer
+    if response.eql?(answer
        @completer.score += points
        account_sid = 'AC6c15a831dc43075a3e628d59e410e8ef'
        auth_token = '8cc5c6bfc1b4659c35946fc12c5986ae'
